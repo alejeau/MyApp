@@ -3,6 +3,7 @@ package com.excilys.android.formation.myapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -15,24 +16,27 @@ public class ParlezVousActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 //        Log.i(TAG, "onCreate");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.parlez_vous_main);
+        setContentView(R.layout.activity_parlez_vous);
         usernameField = (EditText) findViewById(R.id.editTextName);
         passwordField = (EditText) findViewById(R.id.editTextPassword);
     }
 
     public void Send(View v) {
         String s = "";
+        String user = this.usernameField.getText().toString();
+        String pass = this.passwordField.getText().toString();
         if (isValid()) {
             s += "Username: \"";
-            s += this.usernameField.getText().toString();
+            s += user;
             s += "\", password: \"";
-            s += this.passwordField.getText().toString();
+            s += pass;
             s += "\"";
         } else {
             s = "Please fill all the fields!";
         }
 
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+        new ParlezVousTask(this).execute(user, pass);
     }
 
     public void Clear(View v) {
