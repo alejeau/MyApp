@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.excilys.android.formation.myapp.MainActivity">
+    tools:context=".ParlezVousActivity">
 
     <LinearLayout
         android:orientation="vertical"
