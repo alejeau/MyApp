@@ -39,6 +39,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:text="@string/textFieldPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -64,19 +65,21 @@
         android:layout_alignParentBottom="true">
 
         <Button
-            android:id="@+id/buttonEmpty"
-            android:text="@string/buttonEmpty"
+            android:id="@+id/buttonClear"
+            android:text="@string/buttonClear"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
+            android:onClick = "Clear"
             android:layout_gravity="left" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonSend"
             android:text="@string/buttonSend"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
+            android:onClick = "Send"
             android:layout_gravity="right" />
     </LinearLayout>
 </RelativeLayout>

@@ -4,7 +4,8 @@
     <string name="textViewPassword">Password</string>
 
     <string name="textFieldUserName">Name</string>
+    <string name="textFieldPassword"></string>
 
     <string name="buttonSend">Send</string>
-    <string name="buttonEmpty">Empty</string>
+    <string name="buttonClear">Clear</string>
 </resources>
