@@ -31,13 +31,6 @@ public class NavActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Intent intent = getIntent();
-        String user = intent.getStringExtra(ParlezVousActivity.EXTRA_USERNAME);
-        String pass = intent.getStringExtra(ParlezVousActivity.EXTRA_PASSWORD);
-        String res = "Username = " + user + "\n";
-        res += "Password = " + pass;
-        TextView tv = (TextView) this.findViewById(R.id.textViewUrl);
-        tv.setText(res);
     }
 
     @Override

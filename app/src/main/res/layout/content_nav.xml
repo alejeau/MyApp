@@ -12,8 +12,13 @@
     tools:context="com.excilys.android.formation.myapp.NavActivity"
     tools:showIn="@layout/activity_nav">
 
-    <TextView
+    <com.excilys.android.formation.myapp.drawing.ParlezVousView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/textViewUrl" />
+        android:background="@android:color/white" />
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/textViewUrl" />-->
 </RelativeLayout>

@@ -47,12 +47,20 @@ public class ParlezVousActivity extends AppCompatActivity {
         if (isValid) {
             user = this.usernameField.getText().toString();
             pass = this.passwordField.getText().toString();
+            Toast.makeText(this, "Connecting...", Toast.LENGTH_SHORT).show();
             ParlezVousTask pvt = new ParlezVousTask(this);
-            pvt.execute(user, pass);
-            Intent intent = new Intent(this, NavActivity.class);
-            intent.putExtra(EXTRA_USERNAME, user);
-            intent.putExtra(EXTRA_PASSWORD, pass);
-            startActivity(intent);
+            boolean exists = false;
+            try {
+                exists = pvt.execute(user, pass).get().equals("true") ? true : false;
+            } catch (Exception e) {}
+            if (exists) {
+                Intent intent = new Intent(this, NavActivity.class);
+                intent.putExtra(EXTRA_USERNAME, user);
+                intent.putExtra(EXTRA_PASSWORD, pass);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Invalid username/login!", Toast.LENGTH_SHORT).show();
+            }
         } else {
             String s = "Please fill all the fields!";
             Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
